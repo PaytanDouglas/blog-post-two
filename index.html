@@ -2,12 +2,116 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog Post #2</title>
     <style>
-      h3 {color:green;}
+      :root {
+        --primary: #B5FFE1; /*light green*/
+        --secondary:#6DE8BC; /*darker green*/
+        --bgfull: #35665F; /*forest green*/
+        --bgcards: #A8F2FF; /*light blue*/
+        --accent: #66A3FF; /*middle blue*/
+        --text:#472796; /*navy*/
+      }
+      body {width:82%; margin:1em auto; background:var(--bgfull); font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height:1.5; font-size:18px; color:var(--primary);}
+      code {background:var(--bgfull); color:var(--primary); padding:.2em .5em .2em .5em; border-radius:10px;}
+      h3 {margin-bottom:0; padding-bottom:0; color:(--text);}
+      h6 p {margin-left: 25px;}
+      tr td {border-bottom: 3px solid var(--accent);}
+      table {margin: auto; margin-top:25px; text-align: right;}
+      .term {text-align:left;}
+      .top {text-align: center;}
+      p:first-child {padding-top:0; margin-top:0;}
+      img {width:100%; height:auto;}
+      .step {background:var(--bgcards); margin:1em; padding:1em; border:10px solid var(--text); border-radius:4px; transition-duration: 200ms;}
+      .step:hover {transform: scale(1.05); border: 10px var(--bgcards) solid; background: var(--text); color: var(--primary); box-shadow: 7px 7px 10px var(--primary);}
+      .step:hover>h3 {color: var(--primary); text-decoration: underline;}
+      .step:hover>div>pre>code {color:var(--bgfull); background:var(--accent); transition-duration:200ms;}
+      .step:hover>div>pre>code:hover {box-shadow: 2px 2px 5px var(--primary);}
+      .grid-container {padding:10px; margin:10px; display: grid; grid-row-gap: 10px; grid-template-columns:1fr; column-width: 50%;}
+      .one, .two, .three, .four, .five, .six {color:var(--text);}
+      .one, .three, .five {margin-right: 2em;}
+      .two, .four, .six {margin-left: 2em;}
+      #cont {margin-top: 2em; margin-left: 2em;}
+      @media (min-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
+      @media (min-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four {margin:1em;}}
     </style>
   </head>
   <body>
+    <h1>Scafolding a project on a remote server using SSH and the command line interface.</h1>
+    <h6>This post is going to teach you how to create a project with multiple files on a remote server. You should read this blog post if you have a remote server you can access, files you want to start on that server, and are at least somewhat comfortable with SSH and the command line.</h6>
 
+    <p><strong><em>Before you begin</em></strong>: This blog post should only be read <strong><em>after</em></strong> you have downloaded terminal software on your computer. This blog post is made for people who are unfamiliar with Linux commands, but <strong><em>are</em></strong> familiar with html commands.</p>
+    <h6>Vocab and basic commands you may need to know:<br>
+      <table>
+        <tr class="top"><td>Term</td><td>Definition</td></tr>
+        <tr><td class="term">scafolding</td><td>A framework for ; to create ; to add on to</td></tr>
+        <tr><td class="term">mkdir</td><td>Make Directory</td></tr>
+        <tr><td class="term">cd</td><td>Change Directory</td></tr>
+        <tr><td class="term">touch</td><td>Creates a file ; can be used to update timestamps</td></tr>
+        <tr><td class="term">nano</td><td>Creates a file ; most useful when dealing with configuration files</td></tr>
+      </table>
+      </p>
+    </h6>
+
+    <div class="grid-container">
+      <div class="one step">
+        <h3>Step 1: Logging into your terminal.</h3>
+        <div id="cont">
+          <p>Log into your desired host (this is typically an IP address).</p>
+          <p>Once you enter your username and password for the terminal, the terminal should show <pre><code>your_username@your_server</code></pre> and you can begin scaffolding.</p>
+        </div>
+      </div>
+
+      <div class="two step">
+        <h3>Step 2: Creating a project folder and going to the folder.</h3>
+        <div id="cont">
+          <p>In order to create a new directory, enter the line <pre><code>mkdir desired_directory_name</code></pre> into your terminal.</p>
+
+          <p>This creates a new diretory (similar to a "folder" on your computer).<br/>
+          After the directory is made, you can enter that directory by typing <pre><code>cd desired_directory_name</code></pre> into the terminal.</p>
+        </div>
+      </div>
+
+      <div class="three step">
+        <h3>Step 3: Creating files (scripts) to put in your project folder.</h3>
+        <div id="cont">
+          <p>This step assumes you aleady have created html files on a code editor. In order to create a new file for your project, use the command: <pre><code>touch desired_file_name</code></pre></p>
+          <p>Once the file is created, you can copy nd paste your code in from your text editor.</p>
+          <p>Finally, you can run your code in step 4.</p>
+        </div>
+      </div>
+
+      <div class="four step">
+        <h3>Step 4: Running those files.</h3>
+        <div id="cont">
+          <p>Everything's led up to this, hasn't it?</p>
+          <p>To run the code from Step 3 from the file you created in Step 2 after logging into your terminal in Step 1 - we're finally here!</p>
+          <p>Type <code>desired_file_name</code> or <code>./desired_file_name</code> into your terminal to see your code work it's magic!</p>
+          <p>And with that hopefully it turned out the way you wanted it to! Good luck coding!</p>
+        </div>
+      </div>
+
+        <div class="five step">
+          <h3>Step 5: Running those files.</h3>
+          <div id="cont">
+            <p>Everything's led up to this, hasn't it?</p>
+            <p>To run the code from Step 3 from the file you created in Step 2 after logging into your terminal in Step 1 - we're finally here!</p>
+            <p>Type <code>desired_file_name</code> or <code>./desired_file_name</code> into your terminal to see your code work it's magic!</p>
+            <p>And with that hopefully it turned out the way you wanted it to! Good luck coding!</p>
+          </div>
+        </div>
+
+        <div class="six step">
+          <h3>Step 6: Running those files.</h3>
+          <div id="cont">
+            <p>Everything's led up to this, hasn't it?</p>
+            <p>To run the code from Step 3 from the file you created in Step 2 after logging into your terminal in Step 1 - we're finally here!</p>
+            <p>Type <code>desired_file_name</code> or <code>./desired_file_name</code> into your terminal to see your code work it's magic!</p>
+            <p>And with that hopefully it turned out the way you wanted it to! Good luck coding!</p>
+          </div>
+        </div>
+
+    </div><!--End Grid-->
   </body>
 </html>
