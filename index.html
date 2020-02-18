@@ -34,7 +34,7 @@
       .two, .four, .six {margin-left: 2em;}
       #cont {margin-top: 2em; margin-left: 2em;}
       @media (min-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
-      @media (min-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four {margin:1em;}}
+      @media (min-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four, .five, .six {margin:1em;}}
     </style>
   </head>
   <body>
@@ -59,15 +59,15 @@
         <h3>Step 1: Getting into the vagrant folder.</h3>
         <div id="cont">
           <p>From the command prompt you have to find where your vagrant file is.</p>
-          <p>This is easiest if you have it on your desktop. You can cd Desktop, then into the folder that holds your vagrant file if the file's not directly on your desktop.</p>
+          <p>This is easiest if you have it on your desktop. You can <code>cd Desktop</code> then into the folder that holds your vagrant file if the file's not directly on your desktop.</p>
         </div>
       </div>
 
       <div class="two step">
         <h3>Step 2: Installing vagrant.</h3>
         <div id="cont">
-          <p><pre><code>vagrant up</code></pre>
-            This installs vagrant for the first time in that folder. It may take a few minutes for your laptop to set up the vagrant box, so give it a few minutes.</p>
+          <pre><code>vagrant up</code></pre>
+          <p>This installs the specific vagrant box for the first time inside that folder. It may take a few minutes for your laptop to set up the vagrant box, so give it a few minutes.</p>
         </div>
       </div>
 
@@ -90,13 +90,12 @@
         <div class="five step">
           <h3>Step 5: Stopping vagrant.</h3>
           <div id="cont">
-            <pre><code>vagrant destroy / vagrant halt / vagrant suspend<code></pre>
-            <p>If you're leaving the vagrant box for a lunch break or a quick stretch, use vagrant halt to press pause on your project.
-If you're done with your project and aren't sure if you'll need it again, you can use vagrant suspend to save your progress. That way, if you come back to it later, all your data will be saved just how you left it.
-ONLY USE vagrant destroy IF YOU ARE 1000% SURE YOU AREN'T GOING TO USE IT AGAIN!!! vagrant destroy does exactly what it sounds like -- it destroys the vagrant environment you created and all of your work. The only thing it keeps is the box you downloaded, so if you want to remove that too, use the command vagrant box remove.
-</p>
+            <pre><code>vagrant destroy / vagrant halt / vagrant suspend</code></pre>
+            <p>If you're leaving the vagrant box for a lunch break or a quick stretch, use vagrant halt to press pause on your project.</p>
 
-            <p>Type <code>desired_file_name</code> or <code>./desired_file_name</code> into your terminal to see your code work it's magic!</p>
+            <p>If you're done with your project and aren't sure if you'll need it again, you can use vagrant suspend to save your progress. That way, if you come back to it later, all your data will be saved just how you left it.</p>
+
+            <p>ONLY USE vagrant destroy IF YOU ARE 1000% SURE YOU AREN'T GOING TO USE IT AGAIN!!! vagrant destroy does exactly what it sounds like -- it destroys the vagrant environment you created and all of your work. The only thing it keeps is the box you downloaded, so if you want to remove that too, use the command vagrant box remove.</p>
           </div>
         </div>
 
