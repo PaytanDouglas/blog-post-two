@@ -30,11 +30,11 @@
       .step:hover>div>pre>code:hover {box-shadow: 2px 2px 5px var(--primary);}
       .grid-container {padding:10px; margin:10px; display: grid; grid-row-gap: 10px; grid-template-columns:1fr; column-width: 50%;}
       .one, .two, .three, .four, .five, .six {color:var(--text);}
-      .one, .three, .five {margin-right: 2em;}
-      .two, .four, .six {margin-left: 2em;}
+      .one, .three, .five {margin-right: .5em;}
+      .two, .four, .six {margin-left: .5em;}
       #cont {margin-top: 2em; margin-left: 2em;}
-      @media (min-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
-      @media (min-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four, .five, .six {margin:1em;}}
+      @media (max-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
+      @media (max-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four {margin:1em;}}
     </style>
   </head>
   <body>
@@ -58,8 +58,7 @@
       <div class="one step">
         <h3>Step 1: Getting into the vagrant folder.</h3>
         <div id="cont">
-          <p>From the command prompt you have to find where your vagrant file is.</p>
-          <p>This is easiest if you have it on your desktop. You can <code>cd Desktop</code> then into the folder that holds your vagrant file if the file's not directly on your desktop.</p>
+          <p>From the command prompt you have to find where your vagrant file is. This is easiest if you have it on your desktop. You can <pre><code>cd Desktop</code></pre> Then into the folder that holds your vagrant file if the file's not directly on your desktop.</p>
         </div>
       </div>
 
