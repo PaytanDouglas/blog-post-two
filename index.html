@@ -28,28 +28,31 @@
       .step:hover>h3 {color: var(--primary); text-decoration: underline;}
       .step:hover>div>pre>code {color:var(--bgfull); background:var(--accent); transition-duration:200ms;}
       .step:hover>div>pre>code:hover {box-shadow: 2px 2px 5px var(--primary);}
-      .grid-container {padding:10px; margin:10px; display: grid; grid-row-gap: 10px; grid-template-columns:1fr; column-width: 50%;}
+      .grid-container {padding:10px; margin:10px; display: grid; grid-row-gap: 10px; column-width: 50%; grid-template-columns: 1fr;}
       .one, .two, .three, .four, .five, .six {color:var(--text);}
       .one, .three, .five {margin-right: .5em;}
       .two, .four, .six {margin-left: .5em;}
       #cont {margin-top: 2em; margin-left: 2em;}
-      @media (max-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
-      @media (max-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four {margin:1em;}}
+      @media (min-width:990px) {.grid-container {grid-template-columns: repeat(2, 1fr);}}
+  /*    @media (min-width:768px) {.grid-container {grid-template-columns: repeat(1, 1fr);} .one, .two, .three, .four {margin:1em;}}*/
     </style>
   </head>
   <body>
-    <h1>Scafolding a project on a remote server using SSH and the command line interface.</h1>
-    <h6>This post is going to teach you how to create a project with multiple files on a remote server. You should read this blog post if you have a remote server you can access, files you want to start on that server, and are at least somewhat comfortable with SSH and the command line.</h6>
+    <h1>Setting up a virtual machine for a project.</h1>
+    <h6>This post is going to teach you how to create a project on a virtial machine. You should read this blog post if you are comfortable with the command line, have downloaded a program that can create virtual machines, and have a vagrant file ready to be installed on a virtual machine.</h6>
 
-    <p><strong><em>Before you begin</em></strong>: This blog post should only be read <strong><em>after</em></strong> you have downloaded terminal software on your computer. This blog post is made for people who are unfamiliar with Linux commands, but <strong><em>are</em></strong> familiar with html commands.</p>
+    <p><strong><em>Before you begin</em></strong>: This blog post should only be read <strong><em>after</em></strong> you have downloaded VM software on your computer. This blog post is <strong><em><u>NOT</u></em></strong> made for people who are unfamiliar with Linux commands.</p>
+
     <h6>Vocab and basic commands you may need to know:<br>
       <table>
         <tr class="top"><td>Term</td><td>Definition</td></tr>
-        <tr><td class="term">scafolding</td><td>A framework for ; to create ; to add on to</td></tr>
-        <tr><td class="term">mkdir</td><td>Make Directory</td></tr>
+        <tr><td class="term">virtual machine</td><td>In computing, a virtual machine is an emulation of a computer system. <br>They provide functionalities of physical computers <br>without actually being a physical computer.</td></tr>
         <tr><td class="term">cd</td><td>Change Directory</td></tr>
-        <tr><td class="term">touch</td><td>Creates a file ; can be used to update timestamps</td></tr>
-        <tr><td class="term">nano</td><td>Creates a file ; most useful when dealing with configuration files</td></tr>
+        <tr><td class="term">vagrant up</td><td>Installs a vagrant environment onto the virtual machine.</td></tr>
+        <tr><td class="term">vagrant ssh</td><td>Sets up a secure shell inside the vagrant environment.</td></tr>
+        <tr><td class="term">vagrant halt</td><td>Pauses the vagrant environment.<br>Should be used when taking a shorter-term break.<br>i.e. a food, coffee, or nap break.</td></tr>
+        <tr><td class="term">vagrant suspend</td><td>Saves progress on a project.<br>Should be used for longer-term breaks in working on the project.</td></tr>
+        <tr><td class="term">vagrant destroy</td><td>Destroys the vagrant environment.<br>The vagrant environment cannot be recreated.</td></tr>
       </table>
       </p>
     </h6>
@@ -82,14 +85,14 @@
       <div class="four step">
         <h3>Step 4: Experimenting.</h3>
         <div id="cont">
-          <p> have some fun! The vagrant box is all set up and you can now work on projects with team members to your heart's content.</p>
+          <p>Now have some fun! The vagrant box is all set up and you can now work on projects with team members to your heart's content. Just remember that this environment is easily destroyed, so don't forget to be careful when coding!</p>
         </div>
       </div>
 
         <div class="five step">
           <h3>Step 5: Stopping vagrant.</h3>
           <div id="cont">
-            <pre><code>vagrant destroy / vagrant halt / vagrant suspend</code></pre>
+            <code>vagrant destroy</code> / <code>vagrant halt</code> / <code>vagrant suspend</code>
             <p>If you're leaving the vagrant box for a lunch break or a quick stretch, use vagrant halt to press pause on your project.</p>
 
             <p>If you're done with your project and aren't sure if you'll need it again, you can use vagrant suspend to save your progress. That way, if you come back to it later, all your data will be saved just how you left it.</p>
@@ -101,7 +104,9 @@
         <div class="six step">
           <h3>Step 6: Repeating as necessary.</h3>
           <div id="cont">
-            <p>Experiment with vagrant before creating important files in the vagrant environment.</p>
+            <p>Experiment with vagrant before creating important files in the vagrant environment. I would recommend doing"test runs" until you get the hang of creating vagrant environments. They can be tricky, and even after doing one for the first time, you may still get confused when installing a different vagrant box.</p>
+
+            <p>With that all said, good luck and have fun!</p>
           </div>
         </div>
 
